@@ -1,0 +1,61 @@
+{
+  "brand": "Bos Sony Creative Studio",
+  "style": [
+    "Creative Editor Culture",
+    "Premium Editorial",
+    "Modern Advertising"
+  ],
+  "content": [
+    {
+      "title": "AI editing workflow",
+      "platform": "TikTok",
+      "slides": [
+        "Hook kuat",
+        "Masalah audience",
+        "Insight",
+        "Solusi",
+        "CTA"
+      ]
+    },
+    {
+      "title": "Carousel edukasi UMKM",
+      "platform": "Instagram",
+      "slides": [
+        "Hook kuat",
+        "Masalah audience",
+        "Insight",
+        "Solusi",
+        "CTA"
+      ]
+    },
+    {
+      "title": "Template editing HP",
+      "platform": "CapCut",
+      "slides": [
+        "Hook kuat",
+        "Masalah audience",
+        "Insight",
+        "Solusi",
+        "CTA"
+      ]
+    }
+  ],
+  "prompt_template": "Create Instagram carousel for Bos Sony Creative Studio.\n\nAudience:\nUMKM dan creator pemula.\n\nStyle:\nCreative editor culture.\nPremium editorial.\nModern advertising.\n\nOutput:\n- Hook\n- Slide structure\n- Caption\n- Visual direction\n",
+  "research_source": [
+    {
+      "platform": "TikTok",
+      "topic": "AI editing workflow",
+      "reason": "Creator mencari cara edit lebih cepat"
+    },
+    {
+      "platform": "Instagram",
+      "topic": "Carousel edukasi UMKM",
+      "reason": "Konten saveable meningkatkan authority"
+    },
+    {
+      "platform": "CapCut",
+      "topic": "Template editing HP",
+      "reason": "Pemula ingin hasil profesional"
+    }
+  ]
+}
