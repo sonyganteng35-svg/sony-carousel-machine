@@ -2,8 +2,6 @@ name: Weekly Carousel Machine
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * 1"
 
 jobs:
   generate-carousel:
@@ -22,14 +20,14 @@ jobs:
         run: |
           python agents/main_agent.py
 
-- name: Show output
-  run: |
-    ls output
+      - name: Show output
+        run: |
+          ls output
 
-- name: Save generated output
-  run: |
-    git config --global user.name "github-actions"
-    git config --global user.email "actions@github.com"
-    git add output/
-    git commit -m "Generate carousel output" || exit 0
-    git push
+      - name: Save generated output
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add output/
+          git commit -m "Generate carousel output" || exit 0
+          git push
