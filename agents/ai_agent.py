@@ -8,79 +8,85 @@ client = OpenAI(
 )
 
 
-brand = {
-    "name": "Bos Sony Creative Studio",
-    "positioning": "Membantu UMKM dan creator membuat video HP terlihat seperti iklan profesional",
-    "style": [
-        "editorial magazine",
-        "premium creative studio",
-        "modern internet culture"
-    ],
-    "tone": [
-        "praktis",
-        "cerdas",
-        "tidak menggurui"
-    ]
-}
-
-
-with open("output/research_result.json") as f:
-    research = json.load(f)
+with open(
+    "output/creative_plan.json"
+) as f:
+    creative = json.load(f)
 
 
 prompt = f"""
-Kamu adalah Creative Director dari {brand['name']}.
+Kamu adalah AI Content Director Bos Sony Creative Studio.
 
 Brand:
-{brand}
+Bos Sony Creative Studio
 
-Buat ide carousel Instagram berdasarkan research berikut:
+Style:
+Creative Editor Culture,
+Premium Editorial,
+Modern Advertising
 
-{research}
+
+Buatkan Instagram carousel profesional.
+
+Creative direction:
+{creative}
+
 
 Output wajib JSON:
 
 {{
 "title":"",
-"target":"",
 "hook":"",
-"problem":"",
-"insight":"",
 "slides":[
- {{
- "slide":1,
- "headline":"",
- "body":"",
- "visual_direction":""
- }}
+{{
+"slide":1,
+"headline":"",
+"body":"",
+"visual_direction":""
+}}
 ],
+"caption":"",
 "cta":""
 }}
 
-Fokus:
-- membuat orang berhenti scroll
-- meningkatkan save/share
-- cocok untuk UMKM dan creator pemula
-- bukan konten generik
+Jangan beri penjelasan.
+Hanya JSON.
 """
 
 
 response = client.chat.completions.create(
+
     model="gpt-5-mini",
+
     messages=[
         {
             "role":"user",
             "content":prompt
         }
-    ]
+    ],
+
+    temperature=0.8
 )
 
 
-result = response.choices[0].message.content
+content = response.choices[0].message.content
 
 
-with open("output/ai_carousel.json","w") as f:
-    f.write(result)
+data = json.loads(content)
 
 
-print("AI Creative Director finished")
+with open(
+    "output/ai_carousel.json",
+    "w"
+) as f:
+
+    json.dump(
+        data,
+        f,
+        indent=2
+    )
+
+
+print(
+"AI generation finished"
+)
