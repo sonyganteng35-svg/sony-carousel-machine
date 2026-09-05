@@ -1,0 +1,26 @@
+{
+  "brand": "Bos Sony Creative Studio",
+  "positioning": "Membantu UMKM dan creator membuat video HP terlihat seperti iklan profesional",
+  "audience": [
+    "UMKM pemula",
+    "seller online",
+    "creator pemula"
+  ],
+  "style": [
+    "Creative Editor Culture",
+    "Premium Editorial",
+    "Modern Advertising"
+  ],
+  "visual_identity": {
+    "primary_color": "#111111",
+    "secondary_color": "#F7F7F5",
+    "accent_color": "#F26B38",
+    "font_headline": "Space Grotesk Bold",
+    "font_body": "Inter"
+  },
+  "content_goal": [
+    "build authority",
+    "educate audience",
+    "convert to service"
+  ]
+}
