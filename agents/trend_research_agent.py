@@ -3,59 +3,40 @@ import os
 from datetime import datetime
 
 
-print("🔥 Trend Research Agent Started")
+print("🔥 Real Trend Research Agent Started")
 
 
-trends = {
+with open(
+    "config/research_sources.json"
+) as f:
+    sources = json.load(f)
+
+
+trend_result = {
 
     "date":
     datetime.now().strftime("%Y-%m-%d"),
 
-
-    "sources":[
-
-        {
-            "platform":"TikTok",
-            "topic":
-            "AI editing workflow",
-
-            "reason":
-            "Creator mencari cara edit lebih cepat"
-        },
-
-
-        {
-            "platform":"Instagram",
-            "topic":
-            "Carousel edukasi saveable",
-
-            "reason":
-            "Konten edukasi meningkatkan authority"
-        },
-
-
-        {
-            "platform":"CapCut",
-            "topic":
-            "AI template dan editing mobile",
-
-            "reason":
-            "Pemula ingin hasil profesional dengan HP"
-        },
-
-
-        {
-            "platform":"UMKM",
-            "topic":
-            "Video produk smartphone",
-
-            "reason":
-            "Seller membutuhkan konten iklan murah"
-        }
-
-    ]
+    "trends":[]
 
 }
+
+
+for source in sources["sources"]:
+
+    trend_result["trends"].append({
+
+        "platform":
+        source["name"],
+
+        "keyword":
+        source["keyword"],
+
+        "content_angle":
+        "Buat konten edukasi praktis untuk creator dan UMKM"
+
+    })
+
 
 
 os.makedirs(
@@ -70,7 +51,7 @@ with open(
 ) as f:
 
     json.dump(
-        trends,
+        trend_result,
         f,
         indent=2
     )
