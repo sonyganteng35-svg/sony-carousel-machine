@@ -1,14 +1,27 @@
-name: Weekly Research Trigger
+name: Weekly Carousel Machine
 
 on:
-  schedule:
-    - cron: "0 12 * * 0"
   workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 1"
 
 jobs:
-  test:
+  generate-carousel:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test Sony Carousel Machine
-        run: echo "SONY CAROUSEL MACHINE RUNNING"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run Carousel AI Agent
+        run: |
+          python agents/main_agent.py
+
+      - name: Show output
+        run: |
+          ls output
