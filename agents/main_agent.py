@@ -1,20 +1,28 @@
 import subprocess
-import os
+
 
 print("🚀 Bos Sony Carousel Machine Started")
 
-print("Step 1: Running Research Agent")
+
+print("Step 1: Research Agent")
+
 subprocess.run(
-    ["python", "agents/research_agent.py"]
+    ["python","agents/research_agent.py"]
 )
 
-print("Step 2: Running Carousel Agent")
+
+print("Step 2: AI Creative Director")
+
 subprocess.run(
-    ["python", "agents/carousel_agent.py"]
+    ["python","agents/ai_agent.py"]
 )
+
+
+print("Step 3: Carousel Agent")
+
+subprocess.run(
+    ["python","agents/carousel_agent.py"]
+)
+
 
 print("✅ Carousel generation finished")
-
-print(
-    "Output saved in output/weekly_carousel.json"
-)
