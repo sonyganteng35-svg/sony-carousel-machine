@@ -1,44 +1,58 @@
 import json
+import os
 
-brand = json.load(open("config/brand.json"))
 
-prompt = open(
-    "data/prompts/carousel_prompt.txt"
-).read()
+print("🎨 Carousel Agent Started")
 
-research = json.load(
-    open("output/research_result.json")
-)
 
-carousel = {
-    "brand": brand["brand"],
-    "style": brand["style"],
-    "content": [],
-    "prompt_template": prompt,
-    "research_source": research["topics"]
+os.makedirs("output", exist_ok=True)
+
+
+strategy = {
+    "title": "AI editing workflow untuk creator",
+    "platform": "Instagram Carousel",
+    "slides": [
+        {
+            "slide":1,
+            "headline":"AI bukan menggantikan editor",
+            "purpose":"Hook"
+        },
+        {
+            "slide":2,
+            "headline":"Masalah creator: edit lama, ide habis",
+            "purpose":"Problem"
+        },
+        {
+            "slide":3,
+            "headline":"AI membantu proses repetitif",
+            "purpose":"Insight"
+        },
+        {
+            "slide":4,
+            "headline":"Gunakan AI sebagai assistant editor",
+            "purpose":"Solution"
+        },
+        {
+            "slide":5,
+            "headline":"Follow Bos Sony Creative Studio",
+            "purpose":"CTA"
+        }
+    ]
 }
 
-for topic in research["topics"]:
-    carousel["content"].append({
-        "title": topic["topic"],
-        "platform": topic["platform"],
-        "slides": [
-            "Hook kuat",
-            "Masalah audience",
-            "Insight",
-            "Solusi",
-            "CTA"
-        ]
-    })
 
 with open(
-    "output/weekly_carousel.json",
+    "output/04_visual_direction.json",
     "w"
 ) as f:
-    json.dump(
-        carousel,
-        f,
-        indent=2
-    )
+    json.dump(strategy,f,indent=2)
 
-print("Carousel agent finished")
+
+with open(
+    "output/FINAL_CAROUSEL.json",
+    "w"
+) as f:
+    json.dump(strategy,f,indent=2)
+
+
+print("✅ Carousel generated")
