@@ -1,25 +1,38 @@
 name: Weekly Carousel Machine
 
+
 on:
+
   workflow_dispatch:
+
+  schedule:
+    # Setiap Senin jam 08:00 WIB
+    # (01:00 UTC)
+    - cron: "0 1 * * 1"
+
 
 permissions:
   contents: write
+
 
 
 jobs:
 
   generate-carousel:
 
+
     runs-on: ubuntu-latest
 
 
+
     steps:
+
 
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+
 
 
       - name: Setup Python
@@ -28,22 +41,30 @@ jobs:
           python-version: "3.x"
 
 
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
 
-      - name: Run Carousel AI Agent
+
+      - name: Run Bos Sony Carousel Machine
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
         run: |
           python agents/main_agent.py
 
 
-      - name: Check output
+
+      - name: Check generated files
         run: |
-          echo "Generated files:"
+          echo "===== OUTPUT ====="
           ls -la output
+
+          echo "===== SLIDES ====="
+          ls -la output/slides || true
+
 
 
       - name: Save generated output
@@ -57,7 +78,8 @@ jobs:
           git add output/
 
 
-          git commit -m "Generate AI carousel output" || echo "No changes to commit"
+          git commit -m "Generate weekly carousel package" || echo "No changes"
+
 
 
           git push origin main
