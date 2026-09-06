@@ -16,9 +16,7 @@ model = genai.GenerativeModel(
 )
 
 
-with open(
-    "output/creative_plan.json"
-) as f:
+with open("output/creative_plan.json") as f:
     creative = json.load(f)
 
 
@@ -34,15 +32,13 @@ Premium Editorial,
 Modern Advertising
 
 
-Buatkan Instagram carousel profesional.
+Buat Instagram carousel profesional.
 
 Creative direction:
 {creative}
 
 
-Output wajib JSON valid.
-
-Format:
+Output hanya JSON:
 
 {{
 "title":"",
@@ -58,23 +54,14 @@ Format:
 "caption":"",
 "cta":""
 }}
-
-Aturan:
-- Jangan beri markdown
-- Jangan beri penjelasan
-- Hanya JSON
 """
 
 
-response = model.generate_content(
-    prompt
-)
+response = model.generate_content(prompt)
 
 
 content = response.text
 
-
-# bersihkan kemungkinan markdown
 content = content.replace("```json", "")
 content = content.replace("```", "")
 content = content.strip()
@@ -83,18 +70,8 @@ content = content.strip()
 data = json.loads(content)
 
 
-with open(
-    "output/ai_carousel.json",
-    "w"
-) as f:
-    json.dump(
-        data,
-        f,
-        indent=2,
-        ensure_ascii=False
-    )
+with open("output/ai_carousel.json","w") as f:
+    json.dump(data,f,indent=2)
 
 
-print(
-    "✅ Gemini carousel generation finished"
-)
+print("✅ Gemini generation finished")
