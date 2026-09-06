@@ -1,3 +1,6 @@
-google-genai
+openai
 pillow
+streamlit
+pandas
+google-genai
 requests
