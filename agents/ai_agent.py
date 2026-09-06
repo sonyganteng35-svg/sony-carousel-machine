@@ -3,9 +3,13 @@ import json
 import google.generativeai as genai
 
 
+print("🤖 Gemini AI Carousel Agent Started")
+
+
 genai.configure(
     api_key=os.getenv("GEMINI_API_KEY")
 )
+
 
 model = genai.GenerativeModel(
     "gemini-2.0-flash"
@@ -36,7 +40,9 @@ Creative direction:
 {creative}
 
 
-Output wajib JSON:
+Output wajib JSON valid.
+
+Format:
 
 {{
 "title":"",
@@ -53,8 +59,10 @@ Output wajib JSON:
 "cta":""
 }}
 
-Jangan beri penjelasan.
-Hanya JSON.
+Aturan:
+- Jangan beri markdown
+- Jangan beri penjelasan
+- Hanya JSON
 """
 
 
@@ -63,13 +71,13 @@ response = model.generate_content(
 )
 
 
-content = response.text.replace(
-    "```json",
-    ""
-).replace(
-    "```",
-    ""
-).strip()
+content = response.text
+
+
+# bersihkan kemungkinan markdown
+content = content.replace("```json", "")
+content = content.replace("```", "")
+content = content.strip()
 
 
 data = json.loads(content)
@@ -79,14 +87,14 @@ with open(
     "output/ai_carousel.json",
     "w"
 ) as f:
-
     json.dump(
         data,
         f,
-        indent=2
+        indent=2,
+        ensure_ascii=False
     )
 
 
 print(
-    "AI generation finished"
+    "✅ Gemini carousel generation finished"
 )
