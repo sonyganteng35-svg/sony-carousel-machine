@@ -1,0 +1,72 @@
+{
+  "brand": "Bos Sony Creative Studio",
+
+  "title": "",
+
+  "platform": "Instagram",
+
+  "aspect_ratio": "4:5",
+
+  "slides": [
+
+    {
+      "slide": 1,
+      "role": "hook",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    },
+
+    {
+      "slide": 2,
+      "role": "problem",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    },
+
+    {
+      "slide": 3,
+      "role": "insight",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    },
+
+    {
+      "slide": 4,
+      "role": "solution",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    },
+
+    {
+      "slide": 5,
+      "role": "example",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    },
+
+    {
+      "slide": 6,
+      "role": "cta",
+      "headline": "",
+      "body": "",
+      "visual_prompt": "",
+      "layout": ""
+    }
+
+  ],
+
+  "caption": "",
+
+  "hashtags": []
+
+}
