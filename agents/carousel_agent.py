@@ -1,15 +1,18 @@
 import os
 import json
-from openai import OpenAI
+import google.generativeai as genai
 
 
-print("🧠 AI Carousel Agent Started")
+print("🧠 Gemini AI Carousel Agent Started")
 
 
-client = OpenAI(
-    api_key=os.getenv(
-        "OPENAI_API_KEY"
-    )
+genai.configure(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
+
+
+model = genai.GenerativeModel(
+    "gemini-2.0-flash"
 )
 
 
@@ -25,8 +28,8 @@ with open(
     brand = json.load(f)
 
 
-
 prompt = f"""
+Kamu adalah expert content strategist Bos Sony Creative Studio.
 
 Brand:
 {brand}
@@ -37,7 +40,7 @@ Trend:
 
 Buat Instagram carousel 6 slide.
 
-Output HARUS JSON:
+Output HARUS JSON valid:
 
 {{
 "title":"",
@@ -53,35 +56,29 @@ Output HARUS JSON:
 }}
 
 Jangan beri penjelasan lain.
+Hanya JSON.
 """
 
 
-response = client.chat.completions.create(
-
-    model="gpt-5.6-sol",
-
-    messages=[
-
-        {
-        "role":"system",
-        "content":
-        "You are an expert content strategist."
-        },
-
-        {
-        "role":"user",
-        "content":prompt
-        }
-
-    ],
-
-    temperature=0.8
-
+response = model.generate_content(
+    prompt
 )
 
 
+content = response.text
 
-content = response.choices[0].message.content
+
+content = content.replace(
+    "```json",
+    ""
+)
+
+content = content.replace(
+    "```",
+    ""
+)
+
+content = content.strip()
 
 
 data = json.loads(content)
@@ -101,10 +98,11 @@ with open(
     json.dump(
         data,
         f,
-        indent=2
+        indent=2,
+        ensure_ascii=False
     )
 
 
 print(
-    "✅ AI Carousel Generated"
+    "✅ Gemini AI Carousel Generated"
 )
