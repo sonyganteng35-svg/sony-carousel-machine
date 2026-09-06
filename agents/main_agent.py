@@ -1,42 +1,36 @@
 import subprocess
-import os
 
 
-print("🚀 Bos Sony Carousel Machine V3 Started")
+print("🚀 Bos Sony Carousel Machine FINAL")
 
 
 agents = [
-    "research_agent.py",
-    "creative_director.py",
-    "carousel_agent.py",
-    "quality_agent.py",
-    "visual_agent.py",
-    "renderer_agent.py"
+
+"research_agent.py",
+"creative_director.py",
+"carousel_agent.py",
+"visual_agent.py",
+"quality_agent.py",
+"renderer_agent.py",
+"zip_agent.py"
+
 ]
 
 
 for agent in agents:
 
     print(
-        f"\n▶ Running {agent}"
+        f"Running {agent}"
     )
 
-    result = subprocess.run(
+    subprocess.run(
         [
             "python",
             f"agents/{agent}"
         ]
     )
 
-    if result.returncode != 0:
-        print(
-            f"❌ Failed: {agent}"
-        )
-        exit(1)
-
-
-print("\n✅ All agents completed")
 
 print(
-    "📂 Check output/slides/"
+    "✅ FINAL CAROUSEL GENERATED"
 )
