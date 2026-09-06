@@ -1,89 +1,103 @@
 import os
 import json
-import google.generativeai as genai
+from google import genai
 
 
-print("🧠 AI Carousel Agent Started")
+print("🎠 Carousel Agent Started")
 
 
-genai.configure(
-    api_key=os.environ["GEMINI_API_KEY"]
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-model = genai.GenerativeModel(
-    "gemini-3.6-flash"
-)
+with open(
+    "output/research_result.json"
+) as f:
+    research = json.load(f)
 
 
-with open("output/research_result.json") as f:
-    trend = json.load(f)
-
-
-with open("output/creative_plan.json") as f:
+with open(
+    "output/creative_plan.json"
+) as f:
     brand = json.load(f)
 
 
-
 prompt = f"""
-Kamu adalah AI Content Director Bos Sony Creative Studio.
+
+You are Bos Sony Creative Studio AI.
+
+Create Instagram carousel content.
 
 Brand:
 {brand}
 
-Trend:
-{trend}
+Research:
+{research}
 
 
-Buat Instagram carousel 6 slide.
+Create 6 slide carousel.
 
-Output HARUS JSON valid.
+Return ONLY valid JSON.
 
 Format:
 
 {{
 "title":"",
-"hook":"",
 "slides":[
 {{
 "slide":1,
 "headline":"",
 "body":"",
-"visual_prompt":"",
+"image_prompt":"",
 "layout":""
 }}
-],
-"caption":"",
-"cta":""
+]
 }}
 
-Jangan gunakan markdown.
-Jangan gunakan ```json.
-Hanya JSON.
+No markdown.
+No explanation.
 """
 
 
-response = model.generate_content(prompt)
+response = client.models.generate_content(
+    model="gemini-3.6-flash",
+    contents=prompt
+)
 
 
-content = response.text.strip()
+content = response.text
 
 
-if content.startswith("```"):
-    content = content.replace("```json","")
-    content = content.replace("```","")
-    content = content.strip()
+# bersihkan markdown jika Gemini kasih ```json
+
+content = content.replace(
+    "```json",
+    ""
+)
+
+content = content.replace(
+    "```",
+    ""
+)
 
 
+data = json.loads(
+    content.strip()
+)
 
-data = json.loads(content)
 
+os.makedirs(
+    "output",
+    exist_ok=True
+)
 
 
 with open(
     "output/FINAL_CAROUSEL.json",
     "w"
 ) as f:
+
     json.dump(
         data,
         f,
@@ -92,4 +106,6 @@ with open(
     )
 
 
-print("✅ AI Carousel Generated")
+print(
+"✅ Carousel generated"
+)
