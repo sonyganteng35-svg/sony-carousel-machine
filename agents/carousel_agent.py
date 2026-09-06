@@ -20,7 +20,7 @@ with open(
 
 
 with open(
-    "output/brand_context.json"
+    "output/creative_plan.json"
 ) as f:
     brand = json.load(f)
 
