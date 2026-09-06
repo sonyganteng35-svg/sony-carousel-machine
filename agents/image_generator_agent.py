@@ -1,68 +1,82 @@
 import os
 import json
+import requests
 from openai import OpenAI
 
 
-print("🖼 Image Generator Started")
+print("🖼️ Image Generator Agent Started")
 
 
 client = OpenAI(
-    api_key=os.getenv(
-        "OPENAI_API_KEY"
-    )
+    api_key=os.getenv("OPENAI_API_KEY")
 )
 
 
 with open(
-    "output/image_prompts.json"
+    "output/visual_prompts.json"
 ) as f:
-    prompts = json.load(f)
+    slides = json.load(f)
 
 
 os.makedirs(
-    "assets/generated",
+    "output/slides",
     exist_ok=True
 )
 
 
-for item in prompts:
+for slide in slides["slides"]:
+
+    number = slide["slide"]
+    prompt = slide["image_prompt"]
+
+
+    print(
+        f"Generating slide {number}"
+    )
+
 
     response = client.images.generate(
-
         model="gpt-image-1",
+        prompt=f"""
+        Create premium Instagram carousel visual.
 
-        prompt=item["prompt"] 
-        + 
-        ", premium editorial advertising style, "
-        "creative studio photography, "
-        "vertical 4:5",
+        Brand:
+        Bos Sony Creative Studio
 
+        Style:
+        Creative Editor Culture,
+        Premium Editorial,
+        Modern Advertising.
+
+        Requirements:
+        - 1080x1350 Instagram format
+        - no text
+        - no watermark
+        - realistic professional design
+
+        Visual:
+        {prompt}
+        """,
         size="1024x1536"
-
     )
 
 
     image_url = response.data[0].url
 
 
-    print(
-        "Generated slide:",
-        item["slide"]
-    )
-
-
-    # sementara simpan URL dulu
-    # download layer ditambah berikutnya
+    image = requests.get(
+        image_url
+    ).content
 
 
     with open(
-        f"assets/generated/slide_{item['slide']:02}.txt",
-        "w"
-    ) as f:
+        f"output/slides/slide_{number}.png",
+        "wb"
+    ) as img:
 
-        f.write(image_url)
+        img.write(image)
 
 
 print(
-    "✅ Image generation completed"
+"✅ All slides generated"
 )
