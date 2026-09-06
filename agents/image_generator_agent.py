@@ -1,21 +1,22 @@
 import os
 import json
-import requests
-from openai import OpenAI
+import base64
+from google import genai
+from google.genai import types
 
 
-print("🖼️ Image Generator Agent Started")
+print("🖼️ Gemini Image Generator Agent Started")
 
 
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
 with open(
     "output/visual_prompts.json"
 ) as f:
-    slides = json.load(f)
+    data = json.load(f)
 
 
 os.makedirs(
@@ -24,10 +25,14 @@ os.makedirs(
 )
 
 
-for slide in slides["slides"]:
+for slide in data["slides"]:
 
     number = slide["slide"]
-    prompt = slide["image_prompt"]
+
+    prompt = slide.get(
+        "image_prompt",
+        slide.get("visual_prompt", "")
+    )
 
 
     print(
@@ -35,48 +40,79 @@ for slide in slides["slides"]:
     )
 
 
-    response = client.images.generate(
-        model="gpt-image-1",
-        prompt=f"""
-        Create premium Instagram carousel visual.
+    response = client.models.generate_content(
+        model="gemini-2.5-flash-image",
+        contents=[
+            f"""
+Create premium Instagram carousel visual.
 
-        Brand:
-        Bos Sony Creative Studio
+Brand:
+Bos Sony Creative Studio
 
-        Style:
-        Creative Editor Culture,
-        Premium Editorial,
-        Modern Advertising.
+Style:
+Creative Editor Culture,
+Premium Editorial,
+Modern Advertising.
 
-        Requirements:
-        - 1080x1350 Instagram format
-        - no text
-        - no watermark
-        - realistic professional design
+Format:
+- Instagram carousel 4:5
+- 1080x1350
+- realistic professional photography
+- premium creative studio aesthetic
 
-        Visual:
-        {prompt}
-        """,
-        size="1024x1536"
+Rules:
+- no text
+- no watermark
+- no random logo
+
+Visual concept:
+
+{prompt}
+"""
+        ],
+        config=types.GenerateContentConfig(
+            response_modalities=[
+                "IMAGE"
+            ]
+        )
     )
 
 
-    image_url = response.data[0].url
+    image_saved = False
 
 
-    image = requests.get(
-        image_url
-    ).content
+    for part in response.candidates[0].content.parts:
+
+        if part.inline_data:
+
+            image_bytes = base64.b64decode(
+                part.inline_data.data
+            )
 
 
-    with open(
-        f"output/slides/slide_{number}.png",
-        "wb"
-    ) as img:
+            with open(
+                f"output/slides/slide_{number}.png",
+                "wb"
+            ) as img:
 
-        img.write(image)
+                img.write(
+                    image_bytes
+                )
+
+
+            image_saved = True
+
+
+    if image_saved:
+        print(
+            f"✅ Slide {number} saved"
+        )
+    else:
+        print(
+            f"❌ Slide {number} failed"
+        )
 
 
 print(
-"✅ All slides generated"
+    "✅ Gemini image generation finished"
 )
