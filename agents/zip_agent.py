@@ -1,5 +1,5 @@
-import zipfile
 import os
+import zipfile
 
 
 print("📦 ZIP Export Agent Started")
@@ -7,7 +7,12 @@ print("📦 ZIP Export Agent Started")
 
 source_folder = "output/slides"
 
-zip_name = "output/carousel_package.zip"
+zip_name = "output/Bos_Sony_Carousel.zip"
+
+
+if not os.path.exists(source_folder):
+    print("❌ Slides folder belum ada")
+    exit()
 
 
 with zipfile.ZipFile(
@@ -16,18 +21,22 @@ with zipfile.ZipFile(
     zipfile.ZIP_DEFLATED
 ) as zipf:
 
-    for file in sorted(os.listdir(source_folder)):
+    for root, dirs, files in os.walk(source_folder):
 
-        filepath = os.path.join(
-            source_folder,
-            file
-        )
+        for file in files:
 
-        zipf.write(
-            filepath,
-            arcname=file
-        )
+            path = os.path.join(
+                root,
+                file
+            )
+
+            zipf.write(
+                path,
+                arcname=file
+            )
 
 
-print("✅ ZIP created:")
-print(zip_name)
+print(
+    "✅ ZIP created:",
+    zip_name
+)
