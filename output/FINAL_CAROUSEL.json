@@ -3,51 +3,45 @@
   "slides": [
     {
       "slide": 1,
-      "headline": "Video Produk HP Kamu Terlihat Murahan?",
-      "purpose": "Stop scroll",
-      "body": "Masalahnya mungkin bukan di harga HP kamu, tapi pada 3 kesalahan teknis dasar yang sering tidak disadari ini.",
-      "image_prompt": "Split screen visual comparing a dull dimly lit smartphone product video on the left versus a sleek high-end aesthetic product shot on the right, dark modern studio theme",
-      "layout": "Centered strong headline with high-contrast comparison background visual"
+      "headline": "3 Kesalahan Video Produk HP yang Bikin Orang Gak Beli",
+      "body": "Video produk kamu kelihatan kurang profesional? Masalah utamanya mungkin bukan di kameranya, tapi 3 hal mendasar ini.",
+      "image_prompt": "Split screen comparison of a product shoot, left side dim blurry amateur shot, right side crisp sleek professional lighting setup shot with a smartphone. Dark minimalist aesthetic studio context.",
+      "layout": "Centered bold text layout, top warning accent badge, sleek dark background."
     },
     {
       "slide": 2,
-      "headline": "1. Lighting Asal-Asalan",
-      "purpose": "Membangun awareness masalah",
-      "body": "Mengandalkan lampu kamar bikin warna produk kusam dan bayangan berantakan. Solusi: Gunakan cahaya alami dekat jendela atau diffuser sederhana.",
-      "image_prompt": "A smartphone on a tripod filming a product next to a bright window with soft diffused daylight, aesthetic minimalist setup",
-      "layout": "Headline top, text on the left, clean light lighting diagram visual on the right"
+      "headline": "1. Lighting Asal-Asalan (Bikin Kusam)",
+      "body": "Mengandalkan lampu kamar bikin warna asli produk berubah dan terlihat murahan. Solusi cepat: Gunakan cahaya alami dekat jendela atau softbox mini.",
+      "image_prompt": "A smartphone mounted on a mini tripod filming a product next to a window with soft diffused natural daylight, clean side lighting setup.",
+      "layout": "Top headline with highlighted number 1, text box on left, visual mockup illustration on right."
     },
     {
       "slide": 3,
-      "headline": "2. Cuma Pakai Satu Angle Monoton",
-      "purpose": "Memberikan insight",
-      "body": "Menonton video 15 detik dari satu sudut diam bikin penonton cepat bosan dan scroll away. Variasikan jarak kamera untuk menjaga visual hook.",
-      "image_prompt": "Minimalist graphic chart showing 3 phone camera angle icons: Establishing shot, Medium shot, and Macro close-up shot focused on a product",
-      "layout": "Top headline with 3-column horizontal feature breakdown below"
+      "headline": "2. Cuma Pakai Satu Angle Statis",
+      "body": "Video 15 detik dengan 1 sudut pandang saja sangat membosankan. Penonton akan langsung swipe away dalam 2 detik pertama jika visual tidak dinamis.",
+      "image_prompt": "A smartphone camera view focused on a product with motion grid markers showing static vs dynamic camera movement paths.",
+      "layout": "Headline banner top, problem statement in bold frame, visual comparison grid below."
     },
     {
       "slide": 4,
-      "headline": "3. Pergerakan Kamera Terlalu Cepat",
-      "purpose": "Memberikan insight",
-      "body": "Gerakan HP yang terlalu cepat dan patah-patah bikin penonton pusing serta gagal melihat detail penting produk kamu.",
-      "image_prompt": "A modern smartphone mounted on a sleek gimbal stabilizer smoothly panning around a luxury product on a polished dark table",
-      "layout": "Clean side-by-side split layout with text on left and dynamic image on right"
+      "headline": "3. Pacing & Audio Gak Nyambung",
+      "body": "Transisi terlalu lambat dan musik yang asal pilih buat audiens kehilangan minat. Pacing video harus mengikuti ritme audio agar enak ditonton.",
+      "image_prompt": "A mobile video editor screen interface showing neat video clips alignment with audio waveform beats beneath it.",
+      "layout": "Split slide layout, left side text breakdown, right side sleek UI video editing visual."
     },
     {
       "slide": 5,
-      "headline": "Gunakan Formula 4-Shot Sederhana Ini",
-      "purpose": "Memberikan solusi",
-      "body": "Gabungkan 4 shot dalam 10 detik: 1. Establishing Shot (Konteks), 2. Medium Shot (Bentuk), 3. Macro Shot (Tekstur/Detail), 4. Action Shot (Penggunaan).",
-      "image_prompt": "A 2x2 grid photo collage showing four cinematic video angles of a product: wide contextual view, product medium shot, extreme close-up texture, and hands using the product",
-      "layout": "Top headline with 2x2 image grid layout labeled with shot types"
+      "headline": "Gunakan Formula '4-Shot Sederhana'",
+      "body": "1. Hook Shot (Konteks)\n2. Medium Shot (Bentuk Produk)\n3. Detail Shot (Tekstur/Fitur Utama)\n4. Action Shot (Saat Produk Dipakai)",
+      "image_prompt": "Infographic style graphic display showing four small rectangular video preview frames labeled Hook, Medium, Detail, Action.",
+      "layout": "2x2 visual grid container layout showcasing 4 video shot steps with bold clean titles."
     },
     {
       "slide": 6,
-      "headline": "Mau Video Produk Kamu Terlihat Kelas Atas?",
-      "purpose": "Conversion",
-      "body": "Kirim footage mentah HP kamu, Bos Sony Creative Studio yang ubah jadi video promosi berkelas iklan profesional. Klik link di bio!",
-      "image_prompt": "Sleek professional creative studio mockup background with a prominent Call to Action button aesthetic and smartphone preview showing polished video editing timeline",
-      "layout": "Centered bold CTA card layout with dark navy and gold creative studio aesthetics"
+      "headline": "Mau Video Produk Kamu kelihatan Lebih Mahal?",
+      "body": "Save postingan ini untuk panduan syuting HP kamu! Follow @BosSonyCreative Studio untuk tips editing & butuh jasa edit profesional? Langsung DM kami.",
+      "image_prompt": "Minimalist aesthetic layout featuring a modern smartphone displaying a bookmark save action and profile badge branding.",
+      "layout": "Centered conversion CTA format with high contrast callout box and prominent save icon graphic."
     }
   ]
 }
