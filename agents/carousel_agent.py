@@ -1,49 +1,56 @@
 import os
 import json
-import google.generativeai as genai
+from google import genai
 
 
 print("🧠 AI Carousel Agent Started")
 
 
-genai.configure(
+client = genai.Client(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-model = genai.GenerativeModel(
-    "gemini-3.6-flash"
-)
-
-
+# Load creative plan
 with open(
-    "output/research_result.json"
-) as f:
-    trend = json.load(f)
-
-
-with open(
-    "output/creative_plan.json"
+    "output/creative_plan.json",
+    "r"
 ) as f:
     brand = json.load(f)
 
 
+# Load research result
+with open(
+    "output/research_result.json",
+    "r"
+) as f:
+    trend = json.load(f)
+
+
+
 prompt = f"""
-Kamu adalah AI Content Director Bos Sony Creative Studio.
+Kamu adalah AI Content Director
+Bos Sony Creative Studio.
 
 Brand:
 {brand}
 
-Trend:
+Trend Research:
 {trend}
 
 
-Buat Instagram carousel 6 slide.
+Buat Instagram carousel profesional.
 
-Output HARUS JSON:
+Format:
+6 slide.
+
+Output HARUS JSON valid saja.
+
+Schema:
 
 {{
 "title":"",
+"hook":"",
 "slides":[
 {{
 "slide":1,
@@ -57,17 +64,36 @@ Output HARUS JSON:
 "cta":""
 }}
 
-Jangan beri penjelasan.
+Jangan gunakan markdown.
+Jangan pakai ```json.
 Hanya JSON.
 """
 
 
-response = model.generate_content(
-    prompt
+
+response = client.models.generate_content(
+    model="gemini-3.6-flash",
+    contents=prompt
 )
 
 
+
 content = response.text
+
+
+# Bersihkan kemungkinan markdown
+content = content.replace(
+    "```json",
+    ""
+)
+
+content = content.replace(
+    "```",
+    ""
+)
+
+content = content.strip()
+
 
 
 data = json.loads(
@@ -75,10 +101,12 @@ data = json.loads(
 )
 
 
+
 os.makedirs(
     "output",
     exist_ok=True
 )
+
 
 
 with open(
@@ -89,8 +117,10 @@ with open(
     json.dump(
         data,
         f,
-        indent=2
+        indent=2,
+        ensure_ascii=False
     )
+
 
 
 print(
