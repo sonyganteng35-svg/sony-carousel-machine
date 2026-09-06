@@ -1,53 +1,42 @@
 import subprocess
 import os
-import json
 
-print("🚀 Bos Sony Carousel Machine V2 Started")
+
+print("🚀 Bos Sony Carousel Machine V3 Started")
 
 
 agents = [
     "research_agent.py",
     "creative_director.py",
     "carousel_agent.py",
-    "quality_agent.py"
+    "quality_agent.py",
+    "visual_agent.py",
+    "renderer_agent.py"
 ]
 
 
 for agent in agents:
 
-    print(f"\n▶ Running {agent}")
-
-    result = subprocess.run(
-        ["python", f"agents/{agent}"],
-        capture_output=True,
-        text=True
+    print(
+        f"\n▶ Running {agent}"
     )
 
-    print(result.stdout)
+    result = subprocess.run(
+        [
+            "python",
+            f"agents/{agent}"
+        ]
+    )
 
-    if result.stderr:
-        print(result.stderr)
-
-
-print("\n✅ All agents finished")
-
-
-os.makedirs("output", exist_ok=True)
-
-
-final_file = "output/final_carousel.json"
-
-
-if not os.path.exists(final_file):
-
-    data = {
-        "status":"completed",
-        "message":"Carousel pipeline finished",
-        "brand":"Bos Sony Creative Studio"
-    }
-
-    with open(final_file,"w") as f:
-        json.dump(data,f,indent=2)
+    if result.returncode != 0:
+        print(
+            f"❌ Failed: {agent}"
+        )
+        exit(1)
 
 
-print("🎯 FINAL CAROUSEL READY")
+print("\n✅ All agents completed")
+
+print(
+    "📂 Check output/slides/"
+)
