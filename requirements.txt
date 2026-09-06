@@ -1,5 +1,3 @@
-google-generativeai
+google-genai
 pillow
-streamlit
-pandas
-google-generativeai
+requests
