@@ -3,7 +3,7 @@ import json
 import google.generativeai as genai
 
 
-print("🧠 Gemini AI Carousel Agent Started")
+print("🧠 AI Carousel Agent Started")
 
 
 genai.configure(
@@ -13,7 +13,6 @@ genai.configure(
 
 model = genai.GenerativeModel(
     "gemini-3.6-flash"
-)
 )
 
 
@@ -30,7 +29,7 @@ with open(
 
 
 prompt = f"""
-Kamu adalah expert content strategist Bos Sony Creative Studio.
+Kamu adalah AI Content Director Bos Sony Creative Studio.
 
 Brand:
 {brand}
@@ -41,7 +40,7 @@ Trend:
 
 Buat Instagram carousel 6 slide.
 
-Output HARUS JSON valid:
+Output HARUS JSON:
 
 {{
 "title":"",
@@ -53,10 +52,12 @@ Output HARUS JSON valid:
 "visual_prompt":"",
 "layout":""
 }}
-]
+],
+"caption":"",
+"cta":""
 }}
 
-Jangan beri penjelasan lain.
+Jangan beri penjelasan.
 Hanya JSON.
 """
 
@@ -69,20 +70,9 @@ response = model.generate_content(
 content = response.text
 
 
-content = content.replace(
-    "```json",
-    ""
+data = json.loads(
+    content
 )
-
-content = content.replace(
-    "```",
-    ""
-)
-
-content = content.strip()
-
-
-data = json.loads(content)
 
 
 os.makedirs(
@@ -99,11 +89,10 @@ with open(
     json.dump(
         data,
         f,
-        indent=2,
-        ensure_ascii=False
+        indent=2
     )
 
 
 print(
-    "✅ Gemini AI Carousel Generated"
+    "✅ AI Carousel Generated"
 )
