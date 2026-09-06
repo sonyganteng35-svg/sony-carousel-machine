@@ -2,3 +2,4 @@ google-generativeai
 pillow
 streamlit
 pandas
+google-generativeai
