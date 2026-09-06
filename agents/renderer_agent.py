@@ -3,31 +3,39 @@ import json
 import os
 
 
-print("🎨 Renderer Agent Started")
+print("🎨 Premium Carousel Renderer Started")
 
 
-INPUT = "output/final_carousel.json"
-OUTPUT = "output/slides"
+# Load final carousel data
+with open(
+    "output/FINAL_CAROUSEL.json"
+) as f:
+    carousel = json.load(f)
 
+
+output_folder = "output/slides"
 
 os.makedirs(
-    OUTPUT,
+    output_folder,
     exist_ok=True
 )
-
-
-with open(INPUT, "r") as f:
-    data = json.load(f)
 
 
 W = 1080
 H = 1350
 
 
+# colors
+BLACK = (17,17,17)
+WHITE = (247,247,245)
+ORANGE = (242,107,56)
+GRAY = (51,51,51)
+
+
 try:
     headline_font = ImageFont.truetype(
         "DejaVuSans-Bold.ttf",
-        90
+        80
     )
 
     body_font = ImageFont.truetype(
@@ -41,98 +49,102 @@ try:
     )
 
 except:
+
     headline_font = None
     body_font = None
     number_font = None
 
 
 
-for slide in data["slides"]:
+slides = carousel.get(
+    "slides",
+    []
+)
+
+
+for index, slide in enumerate(slides):
 
     img = Image.new(
         "RGB",
         (W,H),
-        "#111111"
+        BLACK
     )
+
 
     draw = ImageDraw.Draw(img)
 
 
-    number = str(
-        slide.get("slide_number",1)
-    ).zfill(2)
-
-
-    # BIG NUMBER
+    # slide number
 
     draw.text(
-        (760,80),
-        number,
+        (70,80),
+        f"{index+1:02}",
         font=number_font,
-        fill="#333333"
+        fill=GRAY
     )
 
 
-    # ORANGE ACCENT
+    # brand
+
+    draw.text(
+        (80,250),
+        "BOS SONY\nCREATIVE STUDIO",
+        font=headline_font,
+        fill=ORANGE
+    )
+
+
+    headline = slide.get(
+        "headline",
+        "Creative Content"
+    )
+
+
+    body = slide.get(
+        "body",
+        ""
+    )
+
+
+    draw.text(
+        (80,520),
+        headline,
+        font=headline_font,
+        fill=WHITE
+    )
+
+
+    draw.text(
+        (80,760),
+        body,
+        font=body_font,
+        fill=WHITE
+    )
+
+
+    # footer
 
     draw.rectangle(
-        (80,120,240,140),
-        fill="#F26B38"
+        (80,1220,1000,1228),
+        fill=ORANGE
     )
 
 
-    # HEADLINE
-
-    draw.text(
-        (80,260),
-        slide.get(
-            "headline",
-            ""
-        ),
-        font=headline_font,
-        fill="#F7F7F5"
+    path = (
+        f"{output_folder}/"
+        f"slide_{index+1:02}.png"
     )
 
 
-    # BODY
+    img.save(path)
 
-    draw.text(
-        (80,650),
-        slide.get(
-            "body",
-            ""
-        ),
-        font=body_font,
-        fill="#F7F7F5"
-    )
-
-
-    # BRAND
-
-    draw.text(
-        (80,1220),
-        "BOS SONY CREATIVE STUDIO",
-        font=body_font,
-        fill="#F26B38"
-    )
-
-
-    filename = (
-        OUTPUT +
-        "/slide_" +
-        number +
-        ".png"
-    )
-
-
-    img.save(filename)
 
     print(
-        "created:",
-        filename
+        "Created:",
+        path
     )
 
 
 print(
-    "✅ Renderer finished"
+    "✅ All carousel slides rendered"
 )
