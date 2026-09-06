@@ -1,6 +1,5 @@
 name: Weekly Carousel Machine
 
-
 on:
 
   workflow_dispatch:
@@ -15,24 +14,19 @@ permissions:
   contents: write
 
 
-
 jobs:
 
   generate-carousel:
 
-
     runs-on: ubuntu-latest
 
 
-
     steps:
-
 
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-
 
 
       - name: Setup Python
@@ -41,20 +35,17 @@ jobs:
           python-version: "3.x"
 
 
-
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
 
-
       - name: Run Bos Sony Carousel Machine
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
         run: |
           python agents/main_agent.py
-
 
 
       - name: Check generated files
@@ -64,7 +55,6 @@ jobs:
 
           echo "===== SLIDES ====="
           ls -la output/slides || true
-
 
 
       - name: Save generated output
