@@ -11,6 +11,7 @@ model = genai.GenerativeModel(
     "gemini-2.0-flash"
 )
 
+
 with open(
     "output/creative_plan.json"
 ) as f:
@@ -57,22 +58,18 @@ Hanya JSON.
 """
 
 
-response = client.chat.completions.create(
-
-    model="gpt-5-mini",
-
-    messages=[
-        {
-            "role":"user",
-            "content":prompt
-        }
-    ],
-
-    temperature=0.8
+response = model.generate_content(
+    prompt
 )
 
 
-content = response.choices[0].message.content
+content = response.text.replace(
+    "```json",
+    ""
+).replace(
+    "```",
+    ""
+).strip()
 
 
 data = json.loads(content)
@@ -91,5 +88,5 @@ with open(
 
 
 print(
-"AI generation finished"
+    "AI generation finished"
 )
