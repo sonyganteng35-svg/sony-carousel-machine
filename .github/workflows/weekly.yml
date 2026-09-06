@@ -1,12 +1,13 @@
 name: Weekly Carousel Machine
 
+
 on:
 
   workflow_dispatch:
 
   schedule:
-    # Setiap Senin jam 08:00 WIB
-    # (01:00 UTC)
+    # Senin 08:00 WIB
+    # 01:00 UTC
     - cron: "0 1 * * 1"
 
 
@@ -14,61 +15,85 @@ permissions:
   contents: write
 
 
+
 jobs:
 
   generate-carousel:
+
 
     runs-on: ubuntu-latest
 
 
     steps:
 
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
+
 
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.11"
+
 
 
       - name: Install dependencies
         run: |
+
           pip install -r requirements.txt
+
 
 
       - name: Run Bos Sony Carousel Machine
         env:
+
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
         run: |
+
           python agents/main_agent.py
+
 
 
       - name: Check generated files
         run: |
+
           echo "===== OUTPUT ====="
+
           ls -la output
 
+
           echo "===== SLIDES ====="
+
           ls -la output/slides || true
+
+
 
 
       - name: Save generated output
         run: |
+
 
           git config --global user.name "github-actions"
 
           git config --global user.email "actions@github.com"
 
 
+
           git add output/
 
 
+
           git commit -m "Generate weekly carousel package" || echo "No changes"
+
+
+
+          git pull --rebase origin main
 
 
 
