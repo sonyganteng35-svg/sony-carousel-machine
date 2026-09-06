@@ -14,7 +14,7 @@ client = OpenAI(
 
 
 with open(
-    "output/trend_research.json"
+    "output/research_result.json"
 ) as f:
     trend = json.load(f)
 
