@@ -1,12 +1,15 @@
 import os
 import json
-from openai import OpenAI
+import google.generativeai as genai
 
 
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
+genai.configure(
+    api_key=os.getenv("GEMINI_API_KEY")
 )
 
+model = genai.GenerativeModel(
+    "gemini-2.0-flash"
+)
 
 with open(
     "output/creative_plan.json"
