@@ -7,33 +7,26 @@ print("🧠 AI Carousel Agent Started")
 
 
 genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
+    api_key=os.environ["GEMINI_API_KEY"]
 )
 
 
 model = genai.GenerativeModel(
-    "gemini-2.0-flash"
+    "gemini-3.6-flash"
 )
 
 
-with open(
-    "output/research_result.json",
-    "r"
-) as f:
+with open("output/research_result.json") as f:
     trend = json.load(f)
 
 
-with open(
-    "output/creative_plan.json",
-    "r"
-) as f:
+with open("output/creative_plan.json") as f:
     brand = json.load(f)
 
 
 
 prompt = f"""
-Kamu adalah AI Content Director
-Bos Sony Creative Studio.
+Kamu adalah AI Content Director Bos Sony Creative Studio.
 
 Brand:
 {brand}
@@ -42,11 +35,11 @@ Trend:
 {trend}
 
 
-Buat Instagram carousel profesional.
+Buat Instagram carousel 6 slide.
 
-Buat 6 slide.
+Output HARUS JSON valid.
 
-Output WAJIB JSON valid:
+Format:
 
 {{
 "title":"",
@@ -64,46 +57,26 @@ Output WAJIB JSON valid:
 "cta":""
 }}
 
-Jangan pakai markdown.
-Jangan pakai ```json.
+Jangan gunakan markdown.
+Jangan gunakan ```json.
 Hanya JSON.
 """
 
 
-
-response = model.generate_content(
-    prompt
-)
+response = model.generate_content(prompt)
 
 
+content = response.text.strip()
 
-content = response.text
 
-
-content = content.replace(
-    "```json",
-    ""
-)
-
-content = content.replace(
-    "```",
-    ""
-)
-
-content = content.strip()
+if content.startswith("```"):
+    content = content.replace("```json","")
+    content = content.replace("```","")
+    content = content.strip()
 
 
 
-data = json.loads(
-    content
-)
-
-
-
-os.makedirs(
-    "output",
-    exist_ok=True
-)
+data = json.loads(content)
 
 
 
@@ -111,7 +84,6 @@ with open(
     "output/FINAL_CAROUSEL.json",
     "w"
 ) as f:
-
     json.dump(
         data,
         f,
@@ -120,7 +92,4 @@ with open(
     )
 
 
-
-print(
-    "✅ AI Carousel Generated"
-)
+print("✅ AI Carousel Generated")
