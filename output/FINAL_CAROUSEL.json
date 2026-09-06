@@ -1,50 +1,53 @@
 {
-  "title": "3 Kesalahan Video Produk HP yang Bikin Gak Laku (dan Cara Bikin Terlihat Mahal)",
-  "hook": "Video produk kamu kelihatan kurang profesional? Masalahnya mungkin bukan di kamera HP kamu!",
+  "title": "3 Kesalahan Video Produk HP yang Bikin Orang Tidak Jadi Beli",
   "slides": [
     {
       "slide": 1,
-      "headline": "HP Mahal Gak Jamin Video Kelihatan 'Mahal'",
-      "body": "Banyak UMKM pikir kuncinya ada di kamera jutaan rupiah. Padahal, video estetik itu soal teknik shooting dan editing, bukan cuma gadget.",
-      "visual_prompt": "Smartphone on a minimalist tripod with professional softbox lighting setup, aesthetic studio vibe, bold aesthetic text overlay",
-      "layout": "Header text on top, sleek technical graphic of camera setup in center, dark mode theme"
+      "headline": "Video Produk HP Kamu Terlihat Murahan?",
+      "purpose": "Stop scroll",
+      "body": "Masalahnya mungkin bukan di harga HP kamu, tapi pada 3 kesalahan teknis dasar yang sering tidak disadari ini.",
+      "image_prompt": "Split screen visual comparing a dull dimly lit smartphone product video on the left versus a sleek high-end aesthetic product shot on the right, dark modern studio theme",
+      "layout": "Centered strong headline with high-contrast comparison background visual"
     },
     {
       "slide": 2,
-      "headline": "Kesalahan #1: Pencahayaan Asal-asalan",
-      "body": "Pakai lampu kamar yang kuning atau redup bikin detail produk hilang dan video berbayang (noise). Penonton langsung hilang trust.",
-      "visual_prompt": "Split comparison image: Left side shows dark grainy product shot with red X, right side shows crisp vibrant lit product shot with green checkmark",
-      "layout": "Side-by-side comparison layout with high contrast visual cards"
+      "headline": "1. Lighting Asal-Asalan",
+      "purpose": "Membangun awareness masalah",
+      "body": "Mengandalkan lampu kamar bikin warna produk kusam dan bayangan berantakan. Solusi: Gunakan cahaya alami dekat jendela atau diffuser sederhana.",
+      "image_prompt": "A smartphone on a tripod filming a product next to a bright window with soft diffused daylight, aesthetic minimalist setup",
+      "layout": "Headline top, text on the left, clean light lighting diagram visual on the right"
     },
     {
       "slide": 3,
-      "headline": "Kesalahan #2: Cuma Pakai 1 Angle Monoton",
-      "body": "Video 15 detik yang cuma nampakin 1 sudut diam itu membosankan. Penonton bakal scroll sebelum paham keunggulan produkmu.",
-      "visual_prompt": "Visual of a video editing timeline showing a static boring clip versus a dynamic multi-cut clip structure",
-      "layout": "Top warning callout box, core explanation text in middle, graphic icon bottom"
+      "headline": "2. Cuma Pakai Satu Angle Monoton",
+      "purpose": "Memberikan insight",
+      "body": "Menonton video 15 detik dari satu sudut diam bikin penonton cepat bosan dan scroll away. Variasikan jarak kamera untuk menjaga visual hook.",
+      "image_prompt": "Minimalist graphic chart showing 3 phone camera angle icons: Establishing shot, Medium shot, and Macro close-up shot focused on a product",
+      "layout": "Top headline with 3-column horizontal feature breakdown below"
     },
     {
       "slide": 4,
-      "headline": "Solusi: Gunakan Pola 4-Shot Sederhana",
-      "body": "1. Establishing Shot (Konteks)\n2. Medium Shot (Produk)\n3. Close Up (Detail/Tekstur)\n4. Action Shot (Penggunaan)",
-      "visual_prompt": "2x2 grid layout showing 4 clean product shots: context, main product, detail texture close-up, and hand interacting with product",
-      "layout": "2x2 visual grid display with numbered badge overlays for each shot type"
+      "headline": "3. Pergerakan Kamera Terlalu Cepat",
+      "purpose": "Memberikan insight",
+      "body": "Gerakan HP yang terlalu cepat dan patah-patah bikin penonton pusing serta gagal melihat detail penting produk kamu.",
+      "image_prompt": "A modern smartphone mounted on a sleek gimbal stabilizer smoothly panning around a luxury product on a polished dark table",
+      "layout": "Clean side-by-side split layout with text on left and dynamic image on right"
     },
     {
       "slide": 5,
-      "headline": "Manfaatkan AI Workflow Biar Edit Cepat",
-      "body": "Gunakan AI auto-caption dan color grading preset di CapCut agar warna video HP langsung terlihat tajam dan sinematik layaknya kamera studio.",
-      "visual_prompt": "Smartphone editing app interface showcasing fast AI feature popups like color grade and auto captions",
-      "layout": "Feature list layout with checkmark icons and visual screenshot background"
+      "headline": "Gunakan Formula 4-Shot Sederhana Ini",
+      "purpose": "Memberikan solusi",
+      "body": "Gabungkan 4 shot dalam 10 detik: 1. Establishing Shot (Konteks), 2. Medium Shot (Bentuk), 3. Macro Shot (Tekstur/Detail), 4. Action Shot (Penggunaan).",
+      "image_prompt": "A 2x2 grid photo collage showing four cinematic video angles of a product: wide contextual view, product medium shot, extreme close-up texture, and hands using the product",
+      "layout": "Top headline with 2x2 image grid layout labeled with shot types"
     },
     {
       "slide": 6,
-      "headline": "Mau Video Produk Kamu Selevel Brand Besar?",
-      "body": "Gak ada waktu buat lighting dan edit sendiri? Serahkan pada Bos Sony Creative Studio. Kami ubah video HP kamu jadi iklan bernilai tinggi!",
-      "visual_prompt": "Professional video editor desk with sleek monitors displaying vibrant product ads, Bos Sony Creative Studio branding",
-      "layout": "Center-aligned focus layout with bold high-converting Call To Action box"
+      "headline": "Mau Video Produk Kamu Terlihat Kelas Atas?",
+      "purpose": "Conversion",
+      "body": "Kirim footage mentah HP kamu, Bos Sony Creative Studio yang ubah jadi video promosi berkelas iklan profesional. Klik link di bio!",
+      "image_prompt": "Sleek professional creative studio mockup background with a prominent Call to Action button aesthetic and smartphone preview showing polished video editing timeline",
+      "layout": "Centered bold CTA card layout with dark navy and gold creative studio aesthetics"
     }
-  ],
-  "caption": "Masih sering bikin video produk asal rekam pakai HP? Pantesan konversinya lesu! 📉\n\nVideo yang kelihatan 'murah' bukan karena HP kamu jelek, tapi karena kesalahan teknik: lighting asal, angle monoton, dan tanpa struktur editing yang jelas.\n\nDi carousel ini, kita bedah pola 4-shot sederhana yang bisa langsung kamu pakai biar video HP terlihat jauh lebih profesional!\n\nSave postingan ini buat panduan shooting kamu berikutnya! 📌\n\nMau terima beres tanpa pusing edit sendiri? Serahkan urusan video editing kamu ke Bos Sony Creative Studio.\n\nKlik link di bio untuk konsultasi gratis! 🚀",
-  "cta": "Simpan post ini & DM 'EDITING' untuk konsultasi video produk kamu sekarang!"
+  ]
 }
