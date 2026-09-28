@@ -3,45 +3,45 @@
   "slides": [
     {
       "slide": 1,
-      "headline": "Video Produk Kamu Masih Terlihat 'Murah'?",
-      "body": "Masalahnya hampir pasti bukan di harga HP kamu, tapi di 3 kesalahan fatal saat proses pengerjaannya.",
-      "image_prompt": "A sleek smartphone on a mini tripod setup aiming at a luxury product, professional dark mood lighting with subtle glowing blue and orange neon highlights, cinematic aesthetic",
-      "layout": "Centered bold text hook on dark gradient background with a high-end camera phone illustration underneath"
+      "headline": "Video Produk HP Kamu Tampak Murah?",
+      "body": "Masalahnya bukan di kameranya, tapi 3 kesalahan fatal ini. Swipe untuk perbaiki!",
+      "image_prompt": "Split screen image comparing a dark low-quality smartphone product video side-by-side with a glossy cinematic studio product video. Modern typography with dark slate blue tone aesthetic.",
+      "layout": "Split-screen visual hook with bold modern headline overlay"
     },
     {
       "slide": 2,
       "headline": "1. Lighting Asal-Asalan",
-      "body": "Mengandalkan lampu kamar membuat warna produk tidak akurat dan tampak kusam. Gunakan cahaya alami dekat jendela atau lighting tambahan dari arah samping.",
-      "image_prompt": "Split visual comparison, left side shows a dull dark product shot with harsh shadows, right side shows a vibrant well-lit product shot using soft diffuse light",
-      "layout": "Top title, text narrative in middle, visual side-by-side comparison graphics at the bottom"
+      "body": "Mengandalkan lampu kamar bikin produk terlihat kusam dan penuh bayangan. Selalu manfaatkan cahaya alami jendela atau softbox light.",
+      "image_prompt": "A smartphone setup showing bad yellow overhead room light vs clean soft directional lighting on a luxury product.",
+      "layout": "Top visual comparison image with bottom high-contrast body text box"
     },
     {
       "slide": 3,
-      "headline": "2. Cuma Ambil Satu Angle Monoton",
-      "body": "Video statis 15 detik dari angle depan bikin audiens cepat bosan dan lanjut scroll. Penonton butuh variasi visual untuk tervisualisasi memiliki produk tersebut.",
-      "image_prompt": "A grid of 4 dynamic phone camera angles showing the same product: extreme close-up detail, top-down flatlay, side profile, and hands-on movement",
-      "layout": "Headline top left, text summary, clean 2x2 thumbnail layout showcasing different angles"
+      "headline": "2. Cuma Pakai 1 Angle Monoton",
+      "body": "Merekam dari satu sudut saja membuat penonton cepat bosan dalam 3 detik. Kombinasikan Wide Shot, Medium Shot, dan Detail Close-up.",
+      "image_prompt": "Infographic graphic depicting 3 camera grid frame angles around a product: Establishing shot, feature shot, and close-up detail.",
+      "layout": "Left graphic diagram with right-aligned bulleted explanation"
     },
     {
       "slide": 4,
-      "headline": "3. Pacing Editing Terlalu Lambat",
-      "body": "3 detik pertama tanpa pergerakan langsung mematikan minat. Cut bagian yang tidak penting dan gunakan ritme transisi yang pas dengan audio.",
-      "image_prompt": "Close up of a smartphone screen showing a video editing app timeline with precise timeline cuts, colorful audio waveform, professional editing concept",
-      "layout": "Left side focused text explanation, right side sleek smartphone UI graphic showing timeline editing cuts"
+      "headline": "3. Transisi & Pacing Lambat",
+      "body": "Video terasa membosankan karena dead air tidak dipotong dan ritme video tidak selaras dengan beat audio.",
+      "image_prompt": "Close up of a smartphone video editing app timeline displaying audio beats and precision trim cuts.",
+      "layout": "Center mobile screen visual overlay with dark sleek text container"
     },
     {
       "slide": 5,
-      "headline": "Solusi Sederhana: Formula 4-Shot",
-      "body": "Coba urutan ini di video berikutnya:\n1. Establishing (Konteks)\n2. Medium Shot (Bentuk Produk)\n3. Close Up (Detail/Tekstur)\n4. Action Shot (Produk Saat Digunakan)",
-      "image_prompt": "Infographic storyboard layout featuring 4 sequential video frames labeled 01, 02, 03, 04 in a clean modern tech visual style",
-      "layout": "Numbered list card layout with clear visual hierarchy and callout boxes"
+      "headline": "Solusi: Gunakan Formula 4 Shot Sederhana",
+      "body": "1. Hook visual (0-2s)\n2. Detail produk (3-5s)\n3. Produk saat digunakan (6-10s)\n4. Call to Action jelas (11-15s)",
+      "image_prompt": "Clean minimalist visual flow diagram showing 4 storyboarding steps numbered 1 to 4 with sleek icons.",
+      "layout": "4-step sequential horizontal roadmap layout"
     },
     {
       "slide": 6,
-      "headline": "Mau Video Produk Kamu Terlihat Kelas Atas?",
-      "body": "Follow @BosSonyCreativeStudio untuk tips visual harian, atau DM 'EDIT' untuk konsultasi jasa video editing profesional produk kamu!",
-      "image_prompt": "A high-end creative studio workstation with dual monitors showing video color grading workflow, branded aesthetic with high contrast call-to-action elements",
-      "layout": "Bold Call-to-Action layout, centered button graphic, soft brand social handles at bottom"
+      "headline": "Ingin Video Produk HP Kamu Berkelas Iklan TV?",
+      "body": "Gak ada waktu edit sendiri? Serahkan pada ahlinya. Hubungi Bos Sony Creative Studio sekarang!",
+      "image_prompt": "Professional creative studio workstation showcase with sleek branding logo and prominent CTA button graphic.",
+      "layout": "Full contrast closing card layout with prominent CTA button design"
     }
   ]
 }
