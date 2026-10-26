@@ -3,45 +3,45 @@
   "slides": [
     {
       "slide": 1,
-      "headline": "Video Produk HP Kamu Terlihat Murah?",
-      "body": "HP mahal tidak menjamin video terlihat mahal. Ini 3 kesalahan fatal yang bikin calon pembeli urung checkout!",
-      "image_prompt": "Split screen showing a dark grainy smartphone product shot on the left vs a sleek well-lit professional product video on the right, dark aesthetic background, high contrast, modern studio style.",
-      "layout": "Centered bold typography with a high-contrast visual comparison background."
+      "headline": "Video produk kamu terlihat \"murah\"?",
+      "body": "HP mahal tidak menjamin video terlihat mahal. Masalahnya mungkin bukan di kameranya, tapi 3 kesalahan dasar ini.",
+      "image_prompt": "A modern smartphone mounted on a mini tripod filming a sleek product on a clean dark table, cinematic lighting accent, professional studio aesthetic",
+      "layout": "Bold typography hero title with smartphone graphic background"
     },
     {
       "slide": 2,
-      "headline": "Kesalahan #1: Lighting Asal-asalan",
-      "body": "Hanya mengandalkan lampu kamar bikin video redup, berbayang, dan grainy. Detail warna asli produk jadi tidak terlihat menarik.",
-      "image_prompt": "Iconography of a dim lightbulb with a red cross over a blurry phone camera view of a product, dark theme with warning highlight accents.",
-      "layout": "Top headline, visual graphics on the left, body text card on the right."
+      "headline": "1. Lighting Asal-Asalan",
+      "body": "Kamera HP sangat bergantung pada cahaya. Mengambil video di ruangan remang atau membelakangi lampu membuat gambar pecah dan berbayang keras.",
+      "image_prompt": "Split comparison layout showing dark noisy product footage on the left vs bright soft-lit product footage on the right shot with smartphone",
+      "layout": "Before and After side-by-side comparison card"
     },
     {
       "slide": 3,
-      "headline": "Kesalahan #2: Cuma Pakai Satu Angle",
-      "body": "Merekam produk dari satu posisi diam selama 15 detik itu membosankan. Penonton akan scroll lewat sebelum paham keunggulan produkmu.",
-      "image_prompt": "A static phone camera frame showing a single boring angle on a pedestal, clean minimalist graphic design.",
-      "layout": "Headline at top left, body text middle left, large graphic illustration on the right."
+      "headline": "2. Cuma Ambil 1 Angle Static",
+      "body": "Penonton cepat bosan jika hanya melihat 1 sudut pandang dari awal sampai akhir. Variasikan visual agar video terasa dinamis.",
+      "image_prompt": "Graphic showcasing three different camera angle frames of the same product: establishing shot, detail close-up, and dynamic side angle",
+      "layout": "3-frame grid breakdown with directional arrows"
     },
     {
       "slide": 4,
-      "headline": "Kesalahan #3: Gerakan Kamera Shakey",
-      "body": "Tangan gemetar saat transisi bikin video kelihatan amatiran. Tanpa pergerakan halus, estetikanya langsung hilang.",
-      "image_prompt": "Smartphone with motion blur lines illustrating camera shake, professional dark mode UI presentation.",
-      "layout": "Headline top center, icon with motion elements center, body text bottom center."
+      "headline": "3. Kamera Panning Terlalu Cepat",
+      "body": "Gerakan HP yang patah-patah dan terlalu cepat buat mata lelah. Gunakan pergerakan lambat, stabil, dan tanpa transisi 3D berlebihan.",
+      "image_prompt": "Minimalist graphic depicting smooth movement vectors around a product with a stability indicator aesthetic",
+      "layout": "Educational infographic card with warning icons"
     },
     {
       "slide": 5,
-      "headline": "Solusi: Gunakan Pola 4 Shot Sederhana",
-      "body": "1. Establishing (Suasana)\n2. Medium Shot (Bentuk produk)\n3. Close-Up (Detail/Tekstur)\n4. Action Shot (Saat digunakan)",
-      "image_prompt": "A clean grid layout of 4 storyboard frames showing a product from establishing shot to detailed close-up, modern infographic style.",
-      "layout": "Headline top, 2x2 grid layout with numbered step icons and clear short labels."
+      "headline": "Gunakan Pola 4 Shot Sederhana Ini",
+      "body": " Shot 1: Establishing (produk & konteks)\n Shot 2: Detail tekstur/bahan\n Shot 3: Fitur/pemakaian\n Shot 4: Result/Call to Action",
+      "image_prompt": "Modern UI checklist featuring a 4-step video shot list formula for product videos",
+      "layout": "Step-by-step checklist card layout"
     },
     {
       "slide": 6,
-      "headline": "Nggak Ada Waktu Edit Biar Kelihatan Mewah?",
-      "body": "Kirim video mentahan HP kamu, biarkan Bos Sony Creative Studio sulap jadi video iklan profesional. DM 'EDIT' sekarang!",
-      "image_prompt": "Sleek dark luxury branding slide for Bos Sony Creative Studio with a vibrant CTA button design and high-end video editor workspace in background.",
-      "layout": "Centered call to action, prominent brand typography, button element at bottom."
+      "headline": "Ingin Video Produk Kamu Terlihat Seperti Iklan TV?",
+      "body": "Biar Bos Sony Creative Studio yang sulap rekaman HP kamu jadi video jualan berkelas. DM 'EDIT' sekarang untuk konsultasi gratis!",
+      "image_prompt": "Sleek promotional graphic showing a professional editing timeline interface on a laptop laptop screen, moody blue and warm highlight accents",
+      "layout": "High-converting Call To Action layout with brand offer card"
     }
   ]
 }
